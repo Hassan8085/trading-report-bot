@@ -4,7 +4,7 @@
   "XRP/USD": "neutral",
   "SOL/USD": "neutral",
   "GALA/USD": "overbought",
-  "ETC/USD": "neutral",
+  "ETC/USD": "overbought",
   "DOGE/USD": "neutral",
   "BNB/USD": "neutral",
   "ADA/USD": "neutral",
@@ -13,5 +13,6 @@
   "LINK/USD": "neutral",
   "LTC/USD": "overbought",
   "TRX/USD": "neutral",
-  "SHIB/USD": "overbought"
+  "SHIB/USD": "overbought",
+  "POL/USD": "neutral"
 }
