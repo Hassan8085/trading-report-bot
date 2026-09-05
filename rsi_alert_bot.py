@@ -26,6 +26,8 @@ TWELVEDATA_API_KEY = os.environ.get("TWELVEDATA_API_KEY")
 SYMBOLS = [
     "BTC/USD", "ETH/USD", "XRP/USD", "SOL/USD",
     "GALA/USD", "ETC/USD", "DOGE/USD", "BNB/USD",
+    "ADA/USD", "AVAX/USD", "DOT/USD", "LINK/USD",
+    "LTC/USD", "TRX/USD", "MATIC/USD", "SHIB/USD",
 ]
 
 INTERVAL = "30min"     # تایم فریم بررسی
@@ -183,7 +185,7 @@ def main():
     for symbol in SYMBOLS:
         df = fetch_ohlc(symbol)
         if df is None or len(df) < RSI_PERIOD + 5:
-            time.sleep(1)
+            time.sleep(8)
             continue
 
         rsi_series = calc_rsi_series(df["close"], RSI_PERIOD)
@@ -204,7 +206,7 @@ def main():
         if zone != "unknown":
             state[symbol] = zone
 
-        time.sleep(1)  # فاصله بین درخواست‌ها برای رعایت محدودیت نرخ API
+        time.sleep(8)  # فاصله بین درخواست‌ها برای رعایت محدودیت نرخ API (8 ارز در دقیقه مجاز است)
 
     save_state(state)
 
