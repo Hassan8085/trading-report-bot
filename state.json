@@ -5,14 +5,14 @@
   "SOL/USD": "neutral",
   "GALA/USD": "neutral",
   "ETC/USD": "neutral",
-  "DOGE/USD": "neutral",
+  "DOGE/USD": "overbought",
   "BNB/USD": "overbought",
-  "ADA/USD": "neutral",
-  "AVAX/USD": "neutral",
+  "ADA/USD": "overbought",
+  "AVAX/USD": "overbought",
   "DOT/USD": "neutral",
   "LINK/USD": "neutral",
   "LTC/USD": "neutral",
-  "TRX/USD": "overbought",
+  "TRX/USD": "neutral",
   "SHIB/USD": "neutral",
   "POL/USD": "neutral"
 }
