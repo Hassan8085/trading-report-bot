@@ -27,7 +27,7 @@ SYMBOLS = [
     "BTC/USD", "ETH/USD", "XRP/USD", "SOL/USD",
     "GALA/USD", "ETC/USD", "DOGE/USD", "BNB/USD",
     "ADA/USD", "AVAX/USD", "DOT/USD", "LINK/USD",
-    "LTC/USD", "TRX/USD", "MATIC/USD", "SHIB/USD",
+    "LTC/USD", "TRX/USD", "POL/USD", "SHIB/USD",
 ]
 
 INTERVAL = "30min"     # تایم فریم بررسی
@@ -160,21 +160,26 @@ def send_photo(path, caption):
 
 def build_caption(symbol, direction, rsi_value):
     coin = symbol.split("/")[0]
+    tv_link = f"https://www.tradingview.com/symbols/{coin}USD/"
+    channel_handle = TELEGRAM_CHAT_ID if TELEGRAM_CHAT_ID.startswith("@") else f"@{TELEGRAM_CHAT_ID}"
+
     if direction == "overbought":
         return (
             f"ارز #{coin} وارد محدوده اشباع خرید شده است. ✔️\n\n"
-            f"📊 تحلیل: tradingview\n"
+            f'📊 تحلیل: <a href="{tv_link}">tradingview</a>\n'
             f"🔴 نوع واگرایی: نزولی\n"
             f"⏰ تایم فریم: 30 دقیقه\n"
-            f"📉 مقدار RSI: {rsi_value:.2f}"
+            f"📉 مقدار RSI: {rsi_value:.2f}\n\n"
+            f"{channel_handle}"
         )
     else:
         return (
             f"ارز #{coin} وارد محدوده اشباع فروش شده است. ✔️\n\n"
-            f"📊 تحلیل: tradingview\n"
+            f'📊 تحلیل: <a href="{tv_link}">tradingview</a>\n'
             f"🟢 نوع واگرایی: صعودی\n"
             f"⏰ تایم فریم: 30 دقیقه\n"
-            f"📈 مقدار RSI: {rsi_value:.2f}"
+            f"📈 مقدار RSI: {rsi_value:.2f}\n\n"
+            f"{channel_handle}"
         )
 
 
