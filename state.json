@@ -3,8 +3,15 @@
   "ETH/USD": "neutral",
   "XRP/USD": "neutral",
   "SOL/USD": "neutral",
-  "GALA/USD": "neutral",
+  "GALA/USD": "overbought",
   "ETC/USD": "neutral",
   "DOGE/USD": "neutral",
-  "BNB/USD": "neutral"
+  "BNB/USD": "neutral",
+  "ADA/USD": "neutral",
+  "AVAX/USD": "neutral",
+  "DOT/USD": "neutral",
+  "LINK/USD": "neutral",
+  "LTC/USD": "overbought",
+  "TRX/USD": "neutral",
+  "SHIB/USD": "overbought"
 }
