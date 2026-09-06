@@ -14,7 +14,7 @@ import pandas as pd
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import mplfinance as mpf
+import matplotlib.patches as patches
 
 # ---------------------- تنظیمات ----------------------
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
@@ -28,6 +28,8 @@ SYMBOLS = [
     "GALA/USD", "ETC/USD", "DOGE/USD", "BNB/USD",
     "ADA/USD", "AVAX/USD", "DOT/USD", "LINK/USD",
     "LTC/USD", "TRX/USD", "POL/USD", "SHIB/USD",
+    "UNI/USD", "ATOM/USD", "NEAR/USD", "FIL/USD",
+    "XLM/USD", "ALGO/USD", "SAND/USD", "ICP/USD",
 ]
 
 INTERVAL = "30min"     # تایم فریم بررسی
@@ -122,25 +124,59 @@ def zone_of(rsi_value):
 def make_chart(df, rsi_series, symbol):
     plot_df = df.tail(60)
     rsi_tail = rsi_series.reindex(plot_df.index)
+    n = len(plot_df)
+
+    bg = "#0d1117"
+    grid_color = "#1c2333"
+    text_color = "#d7dee8"
+    up_color = "#1fae6b"
+    down_color = "#e04b4b"
+    gold = "#f2b705"
 
     fig, (ax1, ax2) = plt.subplots(
         2, 1, figsize=(9, 6), sharex=True,
         gridspec_kw={"height_ratios": [3, 1]},
+        facecolor=bg,
     )
 
-    mpf.plot(plot_df, type="candle", style="charles", ax=ax1, volume=False)
+    ax1.set_facecolor(bg)
+    for i, (_, row) in enumerate(plot_df.iterrows()):
+        color = up_color if row["close"] >= row["open"] else down_color
+        ax1.plot([i, i], [row["low"], row["high"]], color=color, linewidth=1, zorder=2)
+        body_bottom = min(row["open"], row["close"])
+        body_height = abs(row["close"] - row["open"])
+        if body_height == 0:
+            body_height = (row["high"] - row["low"]) * 0.01 or 0.0001
+        ax1.add_patch(patches.Rectangle(
+            (i - 0.3, body_bottom), 0.6, body_height,
+            facecolor=color, edgecolor=color, zorder=3,
+        ))
+    ax1.set_xlim(-1, n)
+    ax1.grid(color=grid_color, linestyle=":", linewidth=0.6, alpha=0.6)
+    ax1.set_title(symbol, color=text_color, fontsize=13, fontweight="bold")
+    ax1.tick_params(colors=text_color, labelbottom=False)
+    for spine in ax1.spines.values():
+        spine.set_color(grid_color)
 
-    ax2.plot(range(len(rsi_tail)), rsi_tail.values, color="green", linewidth=1.3)
-    ax2.axhline(OVERBOUGHT, color="red", linestyle="--", linewidth=0.8)
-    ax2.axhline(OVERSOLD, color="green", linestyle="--", linewidth=0.8)
+    ax2.set_facecolor(bg)
+    ax2.plot(range(len(rsi_tail)), rsi_tail.values, color=gold, linewidth=1.6)
+    ax2.axhline(OVERBOUGHT, color=down_color, linestyle="--", linewidth=0.9, alpha=0.8)
+    ax2.axhline(OVERSOLD, color=up_color, linestyle="--", linewidth=0.9, alpha=0.8)
     ax2.set_ylim(0, 100)
-    ax2.set_ylabel("RSI")
+    ax2.set_ylabel("RSI", color=text_color)
+    ax2.tick_params(colors=text_color)
+    ax2.grid(color=grid_color, linestyle=":", linewidth=0.6, alpha=0.6)
+    for spine in ax2.spines.values():
+        spine.set_color(grid_color)
 
-    ax1.set_title(symbol)
+    channel_handle = TELEGRAM_CHAT_ID if TELEGRAM_CHAT_ID.startswith("@") else f"@{TELEGRAM_CHAT_ID}"
+    fig.text(0.985, 0.012, channel_handle, color=text_color, alpha=0.55,
+              fontsize=10, fontweight="bold", ha="right", va="bottom")
+
     fig.tight_layout()
 
     filename = f"/tmp/{symbol.replace('/', '')}_chart.png"
-    fig.savefig(filename, dpi=120)
+    fig.savefig(filename, dpi=130, facecolor=bg)
     plt.close(fig)
     return filename
 
