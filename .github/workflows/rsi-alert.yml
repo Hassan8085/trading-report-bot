@@ -2,7 +2,7 @@ name: RSI Overbought/Oversold Alert
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/45 * * * *"
   workflow_dispatch: {}
 
 permissions:
