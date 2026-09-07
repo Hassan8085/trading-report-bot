@@ -10,7 +10,7 @@
   "ADA/USD": "neutral",
   "AVAX/USD": "neutral",
   "DOT/USD": "neutral",
-  "LINK/USD": "neutral",
+  "LINK/USD": "overbought",
   "LTC/USD": "neutral",
   "TRX/USD": "neutral",
   "SHIB/USD": "neutral",
@@ -22,5 +22,5 @@
   "XLM/USD": "neutral",
   "ALGO/USD": "neutral",
   "SAND/USD": "neutral",
-  "ICP/USD": "neutral"
+  "ICP/USD": "overbought"
 }
