@@ -17,10 +17,10 @@
   "POL/USD": "neutral",
   "UNI/USD": "neutral",
   "ATOM/USD": "neutral",
-  "NEAR/USD": "neutral",
+  "NEAR/USD": "overbought",
   "FIL/USD": "neutral",
   "XLM/USD": "neutral",
   "ALGO/USD": "neutral",
-  "SAND/USD": "neutral",
+  "SAND/USD": "oversold",
   "ICP/USD": "neutral"
 }
