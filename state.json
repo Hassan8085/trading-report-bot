@@ -6,7 +6,7 @@
   "GALA/USD": "neutral",
   "ETC/USD": "neutral",
   "DOGE/USD": "neutral",
-  "BNB/USD": "oversold",
+  "BNB/USD": "neutral",
   "ADA/USD": "neutral",
   "AVAX/USD": "neutral",
   "DOT/USD": "neutral",
@@ -21,6 +21,6 @@
   "FIL/USD": "neutral",
   "XLM/USD": "neutral",
   "ALGO/USD": "neutral",
-  "SAND/USD": "oversold",
+  "SAND/USD": "neutral",
   "ICP/USD": "neutral"
 }
