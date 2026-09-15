@@ -1,6 +1,6 @@
 {
   "BTC/USD": "neutral",
-  "ETH/USD": "neutral",
+  "ETH/USD": "oversold",
   "XRP/USD": "neutral",
   "SOL/USD": "neutral",
   "GALA/USD": "neutral",
@@ -12,7 +12,7 @@
   "DOT/USD": "neutral",
   "LINK/USD": "neutral",
   "LTC/USD": "neutral",
-  "TRX/USD": "neutral",
+  "TRX/USD": "oversold",
   "SHIB/USD": "neutral",
   "POL/USD": "neutral",
   "UNI/USD": "neutral",
