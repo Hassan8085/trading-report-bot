@@ -8,7 +8,7 @@
   "DOGE/USD": "neutral",
   "BNB/USD": "neutral",
   "ADA/USD": "neutral",
-  "AVAX/USD": "overbought",
+  "AVAX/USD": "neutral",
   "DOT/USD": "neutral",
   "LINK/USD": "neutral",
   "LTC/USD": "neutral",
@@ -21,6 +21,6 @@
   "FIL/USD": "neutral",
   "XLM/USD": "neutral",
   "ALGO/USD": "neutral",
-  "SAND/USD": "neutral",
+  "SAND/USD": "overbought",
   "ICP/USD": "neutral"
 }
