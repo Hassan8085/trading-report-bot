@@ -1,5 +1,5 @@
 {
-  "BTC/USD": "neutral",
+  "BTC/USD": "overbought",
   "ETH/USD": "neutral",
   "XRP/USD": "neutral",
   "SOL/USD": "neutral",
@@ -13,13 +13,13 @@
   "LINK/USD": "neutral",
   "LTC/USD": "neutral",
   "TRX/USD": "neutral",
-  "SHIB/USD": "neutral",
+  "SHIB/USD": "overbought",
   "POL/USD": "neutral",
   "UNI/USD": "neutral",
   "ATOM/USD": "neutral",
   "NEAR/USD": "neutral",
   "FIL/USD": "neutral",
-  "XLM/USD": "neutral",
+  "XLM/USD": "overbought",
   "ALGO/USD": "neutral",
   "SAND/USD": "neutral",
   "ICP/USD": "neutral"
