@@ -7,10 +7,10 @@
   "ETC/USD": "neutral",
   "DOGE/USD": "neutral",
   "BNB/USD": "neutral",
-  "ADA/USD": "overbought",
+  "ADA/USD": "neutral",
   "AVAX/USD": "neutral",
   "DOT/USD": "neutral",
-  "LINK/USD": "neutral",
+  "LINK/USD": "oversold",
   "LTC/USD": "neutral",
   "TRX/USD": "neutral",
   "SHIB/USD": "neutral",
@@ -19,8 +19,8 @@
   "ATOM/USD": "neutral",
   "NEAR/USD": "neutral",
   "FIL/USD": "neutral",
-  "XLM/USD": "neutral",
+  "XLM/USD": "oversold",
   "ALGO/USD": "neutral",
-  "SAND/USD": "neutral",
+  "SAND/USD": "oversold",
   "ICP/USD": "neutral"
 }
