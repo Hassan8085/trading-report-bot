@@ -12,15 +12,15 @@
   "DOT/USD": "neutral",
   "LINK/USD": "neutral",
   "LTC/USD": "neutral",
-  "TRX/USD": "neutral",
+  "TRX/USD": "overbought",
   "SHIB/USD": "neutral",
   "POL/USD": "neutral",
   "UNI/USD": "neutral",
   "ATOM/USD": "neutral",
-  "NEAR/USD": "overbought",
-  "FIL/USD": "overbought",
+  "NEAR/USD": "neutral",
+  "FIL/USD": "neutral",
   "XLM/USD": "neutral",
   "ALGO/USD": "neutral",
   "SAND/USD": "neutral",
-  "ICP/USD": "overbought"
+  "ICP/USD": "neutral"
 }
